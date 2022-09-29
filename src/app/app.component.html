@@ -1,0 +1,19 @@
+<div class="example-container" cdkDropListGroup>
+  <div
+    id="jsp"
+    cdkDropList
+    [cdkDropListEnterPredicate]="dropListEnterPredicate"
+    (cdkDropListDropped)="dropListDropped($event)"
+    class="toto"
+  ></div>
+  <div
+    cdkDropList
+    *ngFor="let item of items"
+    [cdkDropListEnterPredicate]="dropListEnterPredicate"
+    (cdkDropListDropped)="dropListDropped($event)"
+  >
+    <div cdkDrag class="example-box" (cdkDragMoved)="dragMoved($event)">
+      {{ item }}
+    </div>
+  </div>
+</div>
